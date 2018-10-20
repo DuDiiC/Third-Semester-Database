@@ -1,9 +1,9 @@
 -- Napisz polecenia SQL, ktore:
 -- Zadanie 1. Utworza tabele Produkty z kolumnami: Kod, Nazwa, Cena_Netto, StawkaVat, termin_waznosci.
 CREATE TABLE Produkty (
-    Kod Varchar2(4),
-    Nazwa Varchar2(30),
-    Cena_Netto dec(7,2),
+    Kod Varchar(4),
+    Nazwa Varchar(30),
+    Cena_Netto float,
     StawkaVat Integer,
     termin_waznosci date );
     
