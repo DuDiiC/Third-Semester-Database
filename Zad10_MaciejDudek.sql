@@ -39,9 +39,6 @@ SELECT * FROM Pracownicy
         WHERE pensja IS NOT NULL
         GROUP BY id_dzialu
         );
-  
-SELECT MIN(pensja) AS najnizsza_pensja FROM Pracownicy
-    GROUP BY id_dzialu;
 
 -- Zad.6
 SELECT * FROM Projekty
@@ -50,7 +47,7 @@ SELECT * FROM Projekty
         WHERE projekt IS NOT NULL
         );
 
--- Zad.7 NIE WIEM CZY DOBRZE
+-- Zad.7
 SELECT nazwisko FROM Pracownicy
     WHERE id IN
         (SELECT szef_projektu FROM Projekty
@@ -63,7 +60,7 @@ SELECT nazwisko FROM Pracownicy
             )
         );
 
--- Zad.8 CHYBA DOBRZE
+-- Zad.8
 SELECT id_dzialu FROM Dzialy
     WHERE id_dzialu IN
     (SELECT id_dzialu FROM Pracownicy
@@ -73,10 +70,6 @@ SELECT id_dzialu FROM Dzialy
         GROUP BY id_dzialu
         )
     );
-
--- pomoc
-SELECT id_dzialu, SUM(pensja) AS suma_pensji_w_dziale FROM pracownicy
-    GROUP BY id_dzialu;
 
 -- Zad.9
 SELECT imie, nazwisko, pensja FROM Pracownicy
