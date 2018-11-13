@@ -5,12 +5,12 @@ SELECT * FROM Pracownicy
         WHERE nazwa LIKE 'Statistica'
         );
         
--- Zad.2 nie wyyswietlac pracownika Ian Cook
+-- Zad.2 (zrozumialem polecenie jako: 'wyswietlic wszystkich z tego samego dzialu poza nim')
 SELECT nazwisko, pensja FROM Pracownicy
     WHERE id_dzialu LIKE
         (SELECT id_dzialu FROM Pracownicy
         WHERE imie LIKE 'Ian' AND nazwisko LIKE 'Cook'
-        );
+        ) AND imie NOT LIKE 'Ian' AND nazwisko NOT LIKE 'Cook';
     
 -- Zad.3
 SELECT nazwa FROM Projekty
