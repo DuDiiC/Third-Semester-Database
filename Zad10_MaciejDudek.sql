@@ -32,7 +32,7 @@ SELECT nazwa FROM Dzialy
             )
         );
 
--- Zad.5 ŹLE wyswietla mi przykladowo jesli najnizsza pensja w dziale 5 to 1800, to
+-- Zad.5 ZLE wyswietla mi przykladowo jesli najnizsza pensja w dziale 5 to 1800, to
 -- dostane tez tych pracownikow co maja 1800 w dziale 1...
 SELECT * FROM Pracownicy
     WHERE pensja IN
