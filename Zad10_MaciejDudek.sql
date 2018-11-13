@@ -5,7 +5,7 @@ SELECT * FROM Pracownicy
         WHERE nazwa LIKE 'Statistica'
         );
         
--- Zad.2 
+-- Zad.2 nie wyyswietlac pracownika Ian Cook
 SELECT nazwisko, pensja FROM Pracownicy
     WHERE id_dzialu LIKE
         (SELECT id_dzialu FROM Pracownicy
