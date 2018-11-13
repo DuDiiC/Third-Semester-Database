@@ -2,14 +2,14 @@
 SELECT * FROM Pracownicy
     WHERE projekt IN 
         (SELECT p_id FROM Projekty
-        WHERE nazwa='Statistica'
+        WHERE nazwa LIKE 'Statistica'
         );
         
 -- Zad.2 
 SELECT nazwisko, pensja FROM Pracownicy
     WHERE id_dzialu LIKE
         (SELECT id_dzialu FROM Pracownicy
-        WHERE imie='Ian' AND nazwisko='Cook'
+        WHERE imie LIKE 'Ian' AND nazwisko LIKE 'Cook'
         );
     
 -- Zad.3
@@ -18,7 +18,7 @@ SELECT nazwa FROM Projekty
         (SELECT projekt FROM Pracownicy
         WHERE id_dzialu = ANY
             (SELECT id_dzialu FROM Dzialy
-            WHERE nazwa='Programisci'
+            WHERE nazwa LIKE 'Programisci'
             )
         );
 
@@ -28,7 +28,7 @@ SELECT nazwa FROM Dzialy
         (SELECT id_dzialu FROM Pracownicy
         WHERE projekt = ANY
             (SELECT p_id FROM Projekty
-            WHERE nazwa='Inwentaryzacja'
+            WHERE nazwa LIKE 'Inwentaryzacja'
             )
         );
 
@@ -60,7 +60,7 @@ SELECT nazwisko FROM Pracownicy
             (SELECT id FROM Pracownicy
             WHERE id_dzialu NOT IN
                 (SELECT id_dzialu FROM Dzialy
-                WHERE nazwa='Programisci'
+                WHERE nazwa LIKE 'Programisci'
                 )
             )
         );

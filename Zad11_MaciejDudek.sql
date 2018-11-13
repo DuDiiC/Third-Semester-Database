@@ -9,7 +9,7 @@ SELECT nazwisko, imie FROM Pracownicy p1
 SELECT * FROM Dzialy d
     WHERE NOT EXISTS (
         SELECT * FROM Pracownicy p 
-            WHERE projekt = 'p1' AND d.id_dzialu = p.id_dzialu
+            WHERE projekt LIKE 'p1' AND d.id_dzialu LIKE p.id_dzialu
     );
     
 -- Zad.3
@@ -23,5 +23,5 @@ SELECT nazwisko, pensja FROM Pracownicy p
 SELECT * From Pracownicy p1
     WHERE SYSDATE > (
         SELECT termin_oddania FROM Projekty p2
-            WHERE p1.projekt = p2.p_id
+            WHERE p1.projekt LIKE p2.p_id
     ) AND p1.projekt IS NOT NULL;
