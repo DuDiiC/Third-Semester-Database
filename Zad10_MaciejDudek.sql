@@ -10,7 +10,8 @@ SELECT nazwisko, pensja FROM Pracownicy
     WHERE id_dzialu LIKE
         (SELECT id_dzialu FROM Pracownicy
         WHERE imie LIKE 'Ian' AND nazwisko LIKE 'Cook'
-        ) AND imie NOT LIKE 'Ian' AND nazwisko NOT LIKE 'Cook';
+        ) 
+    AND imie NOT LIKE 'Ian' AND nazwisko NOT LIKE 'Cook';
     
 -- Zad.3
 SELECT nazwa FROM Projekty
@@ -63,13 +64,13 @@ SELECT nazwisko FROM Pracownicy
 -- Zad.8
 SELECT id_dzialu FROM Dzialy
     WHERE id_dzialu IN
-    (SELECT id_dzialu FROM Pracownicy
-    GROUP BY id_dzialu
-    HAVING SUM(pensja) IN
-        (SELECT MAX(SUM(pensja)) FROM Pracownicy
+        (SELECT id_dzialu FROM Pracownicy
         GROUP BY id_dzialu
-        )
-    );
+        HAVING SUM(pensja) IN
+            (SELECT MAX(SUM(pensja)) FROM Pracownicy
+            GROUP BY id_dzialu
+            )
+        );
 
 -- Zad.9
 SELECT imie, nazwisko, pensja FROM Pracownicy
