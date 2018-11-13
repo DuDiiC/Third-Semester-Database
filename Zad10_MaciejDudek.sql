@@ -101,4 +101,3 @@ SELECT nazwa FROM Dzialy
                 )
             )
         );
-    
