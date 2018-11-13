@@ -19,9 +19,9 @@ SELECT nazwisko, pensja FROM Pracownicy p
             WHERE pensja < p.pensja
     ) AND pensja IS NOT NULL;
     
--- Zad.4 nie dziala
+-- Zad.4 
 SELECT * From Pracownicy p1
     WHERE SYSDATE > (
         SELECT termin_oddania FROM Projekty p2
-            WHERE p1.projekt = p2
+            WHERE p1.projekt = p2.p_id
     ) AND p1.projekt IS NOT NULL;
