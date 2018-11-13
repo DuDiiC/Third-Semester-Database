@@ -32,15 +32,13 @@ SELECT nazwa FROM Dzialy
             )
         );
 
--- Zad.5 ZLE wyswietla mi przykladowo jesli najnizsza pensja w dziale 5 to 1800, to
--- dostane tez tych pracownikow co maja 1800 w dziale 1...
+-- Zad.5 
 SELECT * FROM Pracownicy
-    WHERE pensja IN
-        (SELECT MIN(pensja) AS najnizsza_pensja FROM Pracownicy
+    WHERE (pensja, id_dzialu) IN
+        (SELECT MIN(pensja), id_dzialu FROM Pracownicy
         WHERE pensja IS NOT NULL
         GROUP BY id_dzialu
-        )
-    ORDER BY id_dzialu;
+        );
   
 SELECT MIN(pensja) AS najnizsza_pensja FROM Pracownicy
     GROUP BY id_dzialu;
