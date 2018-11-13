@@ -5,11 +5,11 @@ SELECT nazwisko, imie FROM Pracownicy p1
             WHERE p1.id_dzialu = p2.id_dzialu
     );
         
--- Zad.2 zle?
-SELECT * FROM Dzialy
+-- Zad.2
+SELECT * FROM Dzialy d
     WHERE NOT EXISTS (
-        SELECT * FROM Pracownicy 
-            WHERE projekt = 'p1'
+        SELECT * FROM Pracownicy p 
+            WHERE projekt = 'p1' AND d.id_dzialu = p.id_dzialu
     );
     
 -- Zad.3
