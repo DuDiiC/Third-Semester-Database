@@ -108,7 +108,9 @@ SELECT k.tytul, COUNT(e.e_id) AS ilosc_egzemplarzy, a.imie, a.nazwisko
 -- (dwa osobne zapytania, czy jedno?)
 
 -- Zad.4 Dla kazdego ISBN wyswietl najmniejsza sygnature. Posortuj wg. sygnatur.
-
+SELECT ISBN, MIN(sygnatura) FROM Egzemplarz
+    GROUP BY ISBN
+    ORDER BY MIN(sygnatura);
 
 -- Zad.5 Wyswietl imiona, nazwiska autorow oraz tytuly ich ksiazek.
 --       Jesli dla danego autora nie ma ksiazki wyswietlony ma byc NULL w polu tytulu.
