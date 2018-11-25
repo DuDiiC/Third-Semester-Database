@@ -107,7 +107,12 @@ SELECT k.tytul, COUNT(e.e_id) AS ilosc_egzemplarzy, a.imie, a.nazwisko
 -- Zad.3 Ile jest tytulow i egzemplarzy ksiazek z kazdej tematyki?
 -- (dwa osobne zapytania, czy jedno?)
 
--- Zad.4 Dla kazdego ISBN wtswietl najmniejsza sygnature. Posortuj wg. sygnatur.
+-- Zad.4 Dla kazdego ISBN wyswietl najmniejsza sygnature. Posortuj wg. sygnatur.
+
 
 -- Zad.5 Wyswietl imiona, nazwiska autorow oraz tytuly ich ksiazek.
 --       Jesli dla danego autora nie ma ksiazki wyswietlony ma byc NULL w polu tytulu.
+SELECT a.imie, a.nazwisko, k.tytul 
+    FROM Autor a 
+        LEFT JOIN Ksiazka k ON k.a_id = a.a_id;
+        
