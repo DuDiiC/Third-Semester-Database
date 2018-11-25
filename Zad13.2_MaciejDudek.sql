@@ -106,6 +106,15 @@ SELECT k.tytul, COUNT(e.e_id) AS ilosc_egzemplarzy, a.imie, a.nazwisko
     
 -- Zad.3 Ile jest tytulow i egzemplarzy ksiazek z kazdej tematyki?
 -- (dwa osobne zapytania, czy jedno?)
+-- ile tytulow
+SELECT tematyka, COUNT(tytul) FROM Ksiazka
+    GROUP BY tematyka;
+-- ile egzemplarzy
+SELECT k.tematyka, COUNT(e.sygnatura)
+    FROM Ksiazka k 
+        JOIN Egzemplarz e ON k.k_id=e.e_id
+    GROUP BY k.tematyka;
+-- jako jedno?
 
 -- Zad.4 Dla kazdego ISBN wyswietl najmniejsza sygnature. Posortuj wg. sygnatur.
 SELECT ISBN, MIN(sygnatura) FROM Egzemplarz
