@@ -65,9 +65,9 @@ INSERT INTO Ksiazka (k_id,a_id,tytul,jezyk_oryginalny,tematyka)
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (1, 3, 1937, '978-123-456-789-0', 'Towarzystwo Wydawnicze ROJ', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (2, 3, 1938, '978-123-456-789-1', 'Towarzystwo Wydawnicze ROJ', 'polski');
+    VALUES (2, 3, 1938, '978-123-456-789-0', 'Towarzystwo Wydawnicze ROJ', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (3, 3, 1938, '978-123-456-789-2', 'Towarzystwo Wydawnicze ROJ', 'angielski');
+    VALUES (3, 3, 1938, '978-123-456-789-0', 'Towarzystwo Wydawnicze ROJ', 'angielski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (4, 43, 2016, '978-123-456-789-3', 'Fabryka Slow', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
@@ -77,7 +77,7 @@ INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (7, 29, 2018, '978-123-456-789-6', 'Fabryka Slow', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (8, 29, 2018, '978-123-456-789-7', 'Fabryka Slow', 'angielski');
+    VALUES (8, 29, 2018, '978-123-456-789-6', 'Fabryka Slow', 'angielski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (9, 31, 2009, '978-123-456-789-8', 'Fabryka Slow', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
@@ -87,11 +87,11 @@ INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (12, 19, 2014, '978-123-456-780-1', 'Czwarta Strona', 'polski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (13, 19, 2014, '978-123-456-780-2', 'Czwarta Strona', 'angielski');
+    VALUES (13, 19, 2014, '978-123-456-780-1', 'Czwarta Strona', 'angielski');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (14, 19, 2015, '978-123-456-780-3', 'Czwarta Strona', 'niemiecki');
+    VALUES (14, 19, 2015, '978-123-456-780-1', 'Czwarta Strona', 'niemiecki');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
-    VALUES (15, 19, 2015, '978-123-456-780-4', 'Czwarta Strona', 'francuski');
+    VALUES (15, 19, 2015, '978-123-456-780-1', 'Czwarta Strona', 'francuski');
 
 -- Zad.1 Ilu mamy autorow urodzonych pomiedzy 1890 a 1927?
 SELECT COUNT(*) FROM Autor
