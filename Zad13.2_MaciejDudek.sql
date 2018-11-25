@@ -92,3 +92,22 @@ INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (14, 19, 2015, '978-123-456-780-3', 'Czwarta Strona', 'niemiecki');
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (15, 19, 2015, '978-123-456-780-4', 'Czwarta Strona', 'francuski');
+
+-- Zad.1 Ilu mamy autorow urodzonych pomiedzy 1890 a 1927?
+SELECT COUNT(*) FROM Autor
+    WHERE rok_urodzenia BETWEEN 1890 AND 1927;
+    
+-- Zad.2 Dla kazdej ksiazki wyswietl tytul, ilosc egzemplarzy, imie i nazwisko autora.
+SELECT k.tytul, COUNT(e.e_id) AS ilosc_egzemplarzy, a.imie, a.nazwisko 
+    FROM Ksiazka k 
+        JOIN Autor a ON k.a_id=a.a_id
+        JOIN Egzemplarz e ON k.k_id=e.e_id
+    GROUP BY k.tytul, a.imie, a.nazwisko;
+    
+-- Zad.3 Ile jest tytulow i egzemplarzy ksiazek z kazdej tematyki?
+-- (dwa osobne zapytania, czy jedno?)
+
+-- Zad.4 Dla kazdego ISBN wtswietl najmniejsza sygnature. Posortuj wg. sygnatur.
+
+-- Zad.5 Wyswietl imiona, nazwiska autorow oraz tytuly ich ksiazek.
+--       Jesli dla danego autora nie ma ksiazki wyswietlony ma byc NULL w polu tytulu.
