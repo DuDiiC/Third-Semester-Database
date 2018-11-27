@@ -1,4 +1,7 @@
--- Zad.0
+-- Zad.0 Skonstruuj tabele, uzupelniajac je o kolumny reprezentujace stosowne klucze. Kazda tabela musi miec klucz glowny, 
+--       ponadto kazda zaleznosc powinna byc reprezentowana kluczem obcym. Atrybut sygnatura jest kluczem glownym o typie 
+--       liczby calkowitej. Dolaczyc polecenia insert dla 5 autorow, 12 ksiazek (przypisanych do 3 autorow, czyli 2 aut. nie 
+--       ma ksiazek), 4 tematyki, 3 wydawnictwa, 15 egzemplarzy (dla 9 pozycji w ksiazkach, 3 ksiazki sa bez egzemplarzy).
 CREATE TABLE Autor (
     a_id integer PRIMARY KEY,
     imie varchar(100),
