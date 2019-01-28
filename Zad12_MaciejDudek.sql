@@ -30,9 +30,7 @@ SELECT p1.imie, p1.nazwisko, p2.nazwisko AS Szef
     ON p1.id_dzialu = Dzialy.id_dzialu
     WHERE Dzialy.nazwa LIKE 'Programisci';
     
--- Zad.6 polecenie zrozumialem jako 'nie wypisywac klientow, ktorzy nie maja pracownikow
---       kontaktowych', gdyby trzeba bylo ich wypisac, w obu przypadkach zamiast JOIN
---       byloby LEFT OUTER JOIN
+-- Zad.6 
 SELECT Klienci.nazwa AS klient, Pracownicy.imie, Pracownicy.nazwisko, Dzialy.nazwa AS Dzial
     FROM Klienci JOIN Pracownicy
     ON Klienci.prac_kontaktowy = pracownicy.id JOIN Dzialy

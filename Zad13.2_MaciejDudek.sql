@@ -1,7 +1,4 @@
--- Zad.0 Skonstruuj tabele, uzupelniajac je o kolumny reprezentujace stosowne klucze. Kazda tabela musi miec klucz glowny, 
---       ponadto kazda zaleznosc powinna byc reprezentowana kluczem obcym. Atrybut sygnatura jest kluczem glownym o typie 
---       liczby calkowitej. Dolaczyc polecenia insert dla 5 autorow, 12 ksiazek (przypisanych do 3 autorow, czyli 2 aut. nie 
---       ma ksiazek), 4 tematyki, 3 wydawnictwa, 15 egzemplarzy (dla 9 pozycji w ksiazkach, 3 ksiazki sa bez egzemplarzy).
+-- Zad.0 
 CREATE TABLE Autor (
     a_id integer PRIMARY KEY,
     imie varchar(100),
@@ -96,30 +93,29 @@ INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
 INSERT INTO Egzemplarz (sygnatura, e_id, rok_wydania, ISBN, wydawnictwo, jezyk)
     VALUES (15, 19, 2015, '978-123-456-780-1', 'Czwarta Strona', 'francuski');
 
--- Zad.1 Ilu mamy autorow urodzonych pomiedzy 1890 a 1927?
+-- Zad.1 
 SELECT COUNT(*) AS ilosc_autorow FROM Autor
     WHERE rok_urodzenia BETWEEN 1890 AND 1927;
     
--- Zad.2 Dla kazdej ksiazki wyswietl tytul, ilosc egzemplarzy, imie i nazwisko autora.
+-- Zad.2 
 SELECT k.tytul, COUNT(e.e_id) AS ilosc_egzemplarzy, a.imie, a.nazwisko 
     FROM Ksiazka k 
         JOIN Autor a ON k.a_id=a.a_id
         JOIN Egzemplarz e ON k.k_id=e.e_id
     GROUP BY k.tytul, a.imie, a.nazwisko;
     
--- Zad.3 Ile jest tytulow i egzemplarzy ksiazek z kazdej tematyki?
+-- Zad.3 
 SELECT k.tematyka, COUNT(DISTINCT k.tytul) AS ile_ksiazek, COUNT(e.sygnatura) AS ile_egzemplarzy 
     FROM Ksiazka k
         LEFT JOIN Egzemplarz e ON k.k_id=e.e_id
     GROUP BY k.tematyka;
 
--- Zad.4 Dla kazdego ISBN wyswietl najmniejsza sygnature. Posortuj wg. sygnatur.
+-- Zad.4 
 SELECT ISBN, MIN(sygnatura) FROM Egzemplarz
     GROUP BY ISBN
     ORDER BY MIN(sygnatura);
 
--- Zad.5 Wyswietl imiona, nazwiska autorow oraz tytuly ich ksiazek.
---       Jesli dla danego autora nie ma ksiazki wyswietlony ma byc NULL w polu tytulu.
+-- Zad.5 
 SELECT a.imie, a.nazwisko, k.tytul 
     FROM Autor a 
         LEFT JOIN Ksiazka k ON k.a_id = a.a_id;

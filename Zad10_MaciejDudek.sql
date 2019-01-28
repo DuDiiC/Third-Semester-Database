@@ -5,7 +5,7 @@ SELECT * FROM Pracownicy
         WHERE nazwa LIKE 'Statistica'
         );
         
--- Zad.2 (zrozumialem polecenie jako: 'wyswietlic wszystkich z tego samego dzialu poza nim')
+-- Zad.2
 SELECT nazwisko, pensja FROM Pracownicy
     WHERE id_dzialu LIKE
         (SELECT id_dzialu FROM Pracownicy
